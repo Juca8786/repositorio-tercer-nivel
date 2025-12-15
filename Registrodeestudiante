@@ -1,0 +1,51 @@
+using System;
+
+namespace RegistroEstudiante
+{
+    class Estudiante
+    {
+        public string Id;
+        public string Nombres;
+        public string Apellidos;
+        public string Direccion;
+        public string[] Telefonos;
+
+        public void MostrarInformacion()
+        {
+            Console.WriteLine("\n--- INFORMACIÓN DEL ESTUDIANTE ---");
+            Console.WriteLine("ID: " + Id);
+            Console.WriteLine("Nombres: " + Nombres);
+            Console.WriteLine("Apellidos: " + Apellidos);
+            Console.WriteLine("Dirección: " + Direccion);
+
+            Console.WriteLine("Teléfonos:");
+            for (int i = 0; i < Telefonos.Length; i++)
+            {
+                Console.WriteLine($"Teléfono {i + 1}: {Telefonos[i]}");
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Estudiante estudiante = new Estudiante();
+
+            estudiante.Id = "0604493940";
+            estudiante.Nombres = "José Luis";
+            estudiante.Apellidos = "Juca Rodríguez";
+            estudiante.Direccion = "Puembo - Calle José Borja y 24 de Mayo";
+
+            estudiante.Telefonos = new string[3];
+            estudiante.Telefonos[0] = "0962582771";
+            estudiante.Telefonos[1] = "0985656834";
+            estudiante.Telefonos[2] = "0976577430";
+
+            estudiante.MostrarInformacion();
+
+            Console.WriteLine("\nPresione cualquier tecla para finalizar...");
+            Console.ReadKey();
+        }
+    }
+}
